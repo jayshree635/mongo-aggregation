@@ -23,9 +23,12 @@ config.dbConnection()
 const route = require('./routes/user/user.route')
 const product_categories = require('./routes/product_categories/product_categories.route')
 const product = require('./routes/product/product.route')
+const productReview = require('./routes/product_reviews/product_reviews.route')
 app.use('/api/v1/',route)
 app.use('/api/v1/',product_categories)
 app.use('/api/v1/',product)
+app.use('/api/v1/',productReview)
+
 
 //.................create Server..................
 let server 

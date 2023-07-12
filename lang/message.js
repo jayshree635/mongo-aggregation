@@ -42,11 +42,12 @@ const MESSAGES = {
     '1405': 'delete admin profile successfully!',
     '1406': 'you are not Admin',
 
-    //comment 
-    '1501': 'create comment successfully',
-    '1502': 'get comment successfully',
-    '1503': 'comment not found',
-    '1504': 'delete comment successfully',
+    // product review 
+    '1501': 'create product review successfully',
+    '1502': 'get product REviews successfully',
+    '1503': 'product_reviews not found',
+    '1504': 'delete product reviews successfully',
+    '1505': 'update product reviews successfully',
 
 
     // Common

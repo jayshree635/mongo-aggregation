@@ -18,6 +18,7 @@ route.post('/login-User',user.loginUser)
 //..............update user profile..........
 route.patch('/update-User-Profile',upload.uploadImage('profileimages',"profile_image"),user.updateUserProfile)
 
+//..................delete user.....................
 route.delete('/delete-User',user.deleteUser)
 
 module.exports = route

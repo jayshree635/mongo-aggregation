@@ -1,6 +1,9 @@
 const Validator = require('validatorjs')
 const User = require('../../model/user/user.model')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const config = require('../../config/config')
+const userSession = require('../../model/user/userSession')
 
 //...................signup API......................
 const signUp = async (req, res) => {
@@ -24,6 +27,11 @@ const signUp = async (req, res) => {
         }
 
         const user = await User.create({ userName, email, password, profile_image })
+
+        const token = jwt.sign({ email, userName, user_id: user._id }, config.jwt_secret_key, { expiresIn: '1h' });
+
+        const session = await userSession.create({ user_id: user._id, token })
+        console.log(session);
 
         return RESPONSE.success(res, 1001, user)
     } catch (error) {
